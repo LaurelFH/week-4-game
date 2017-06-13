@@ -18,7 +18,7 @@ var gems = [];//these are preset- values? or 1-12?
 function pickNumber () {
 	targetScore = Math.floor(Math.random() * (120-19+1) + 19);
 	//display the targetScore in the proper space
-	$("#displayTargetBox").append(targetScore);
+	$("#displayTargetBox").html(targetScore);
 }
 
 //computer assigns random value to the four gems, a number from 1-12 
@@ -55,9 +55,10 @@ function setupGemValues(){
 
 //computer assigns a random number value to the crystals between 1-12
 //each gem should be assigned a different hidden value/position in the gem value array 
+
 	function assignGemValue(points){
 		playerScore += points;
-		$("#displayPlayerScoreBox").append(playerScore);
+		$("#displayPlayerScoreBox").html(playerScore);
 		checkWinLoss();
 	}
 
@@ -105,8 +106,8 @@ function updateScore(){
 	var score = "<p>wins: " + wins + "</p>" +
 	"<p>losses: " + losses + "</p>";
 	//"<p>Your current total is: " + playerScore + "</p>"; 
-	$("#displayPlayerScoreBox").append(playerScore);
-	$("#displayWinLossBox").append(score);
+	$("#displayPlayerScoreBox").html(playerScore);
+	$("#displayWinLossBox").html(score);
 //	alert(playerScore);
 }
 
