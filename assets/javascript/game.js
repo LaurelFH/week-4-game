@@ -5,9 +5,10 @@
 //for tracking the score
 var wins = 0;
 var losses = 0;
+//for tracking the taregt score, player's current score and value of the gems
 var targetScore = 0;
 var playerScore = 0;
-var gemValue = [1, 2, 6, 10];//these are preset- value 
+var gemValue = [1, 2, 6, 10];//these are preset- values? or 1-12? 
 
 
 /////////////Functions
@@ -21,9 +22,8 @@ function pickNumber () {
 	//test this other part
 }
 
-//computer shuffles through options to find random numbers for the gems
+//computer shuffles through the four gem options to find random numbers for the gems
 function shuffleGemValue(a){
-
 	var j, x, i;
 	for (i =a.length; i; i--){
 		x =a[i -1];
@@ -33,7 +33,7 @@ function shuffleGemValue(a){
 }
 
 //computer assigns a random number value to the crystals between 1-12
-//each gem should have a different value/position in the gem value array 
+//each gem should be assigned a different hidden value/position in the gem value array 
 	function assignGemValue(points){
 		playerScore += points;
 		$("#displayScoreBox").html(playerScore);
