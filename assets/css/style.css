@@ -10,4 +10,10 @@
 
 }
 
+.jumbotron{
+	
+    background-image: url("../images/jumbobg.png") no-repeat center center;
+    background-position: 0% 25%;
+    background-size: cover;
 
+}

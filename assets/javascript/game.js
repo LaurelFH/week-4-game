@@ -30,26 +30,35 @@ function randomGemValue () {
 function setupGemValues(){
 
 	//need to fill the array with 4 random numbers from 1-12 
-
-	//call randomGemValue, need 4 numbers, push to gems array, 
-	gems.push(randomGemValue());
-	gems.push(randomGemValue());
-	gems.push(randomGemValue());
-	gems.push(randomGemValue());
-
 	//need to get rid of doubles??
-	for (var gemCount = 0; gemCount == )
+	for (var gemIndex = 0; gemIndex < 4; gemIndex++){
+		///if(gems[0] == )
+		//Push a random number to the gems array
+		gems.push(randomGemValue());
+		//check to see that the last number pushed wasn't already in the list
+		//....and reroll if it is already in gems
+		for(var checkGemIndex = 0; checkGemIndex < gems.length-1; checkGemIndex++){
+			//this will potentially cause a reroll for a double?  
+			if(gems[checkGemIndex] == gems[gemIndex]){
+				gems[gemIndex] = randomGemValue();
+				//this will restart the check loop! Need to make sure it won't just do it once 
+				checkGemIndex = -1;
+
+			}
+		}
+	}
+
+	alert(gems.toString());
 
 }
-
-
 
 
 //computer assigns a random number value to the crystals between 1-12
 //each gem should be assigned a different hidden value/position in the gem value array 
 	function assignGemValue(points){
 		playerScore += points;
-		$("#displayScoreBox").append(playerScore);
+		$("#displayPlayerScoreBox").append(playerScore);
+		checkWinLoss();
 	}
 
 	$("#garnet").click(function(){
@@ -69,13 +78,36 @@ function setupGemValues(){
 	});
 
 
-//updates the score and other info on the display
+//checks the wins and losses 
+function checkWinLoss(){
 
+	//if the the playerScore === targetScore then activate wins by 1
+	if(playerScore == targetScore){
+		wins++;
+		//tracking info for score	
+		updateScore();
+		resetGame();
+
+	} 
+	//if the scores are not equal and 
+	else if (playerScore > targetScore){
+
+		losses++;
+		//tracking info for score	
+		updateScore();
+		resetGame();
+	}
+
+}
+
+
+//updates the score and other info on the display
 function updateScore(){
 	var score = "<p>wins: " + wins + "</p>" +
-	"<p>losses: " + losses + "</p>"
-	"<p>Your score is: " + playerScore + "</p>"; 
-	$("displayScoreBox").append(score);
+	"<p>losses: " + losses + "</p>";
+	//"<p>Your current total is: " + playerScore + "</p>"; 
+	$("#displayPlayerScoreBox").append(playerScore);
+	$("#displayWinLossBox").append(score);
 	alert(playerScore);
 }
 
@@ -94,25 +126,9 @@ function resetGame(){
 $(document).ready(function(){
 	/*alert(targetScore);*/
 	if(targetScore == 0){
-			pickNumber();
+		pickNumber();
 	}
-			shuffleGemValue(gemValue);
-		
-		//if the the playerScore === targetScore then activate wins by 1
-	if(playerScore == targetScore){
-		wins++;
-		//tracking info for score	
-		updateScore();
-		resetGame();
+	setupGemValues();
 
-	} 
-		//if the scores are not equal and 
-	else if (playerScore > targetScore){
-
-		losses++;
-		//tracking info for score	
-		updateScore();
-		resetGame();
-	}
 }); 
 

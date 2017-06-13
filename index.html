@@ -8,22 +8,23 @@
 	<link rel = "stylesheet" type = "text/css" href="assets/css/reset.css">
 		<!--link for jquery functionality-->
 	 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-	<!--css file-->
-	<link rel = "stylesheet" type = "text/css" href="assets/css/style.css">
 	<!-- Latest compiled and minified CSS for Bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!--css file-->
+	<link rel = "stylesheet" type = "text/css" href="assets/css/style.css">
 
 </head>
 		<body>
 
-			<!--bootstrap container for the overall grid--> 
-			<div class="container">
-			
-			<!--jumbo title with game name-->
+					<!--jumbo title with game name-->
 				<div class="jumbotron">
 				<h1 class="text-center"><strong>Crystal Gem Count: The Game!</strong></h1>
 			</div>
+
+			<!--bootstrap container for the overall grid--> 
+			<div class="container">
+			
+
 				
 				<!-- game info box-->
 				<div class="panel-body" id="gameInfoBox">
@@ -59,12 +60,25 @@
 				<h2> Your target score is:</h2>
 				</div><!--close row 2-->
 					
-			<!--empty div for the Player score display on row 3-->
-			<div class="row" id="displayScoreBox">
+			<!--empty div for the current total pointsscore display on row 3-->
+			<div class="row" id="displayPlayerScoreBox">
 				
-				<h2>You current stats are:</h2>
+				<h2>Your current total is:</h2>
 				
 			</div><!--close row 3-->
+
+			<!--empty div for the wins and losses display on row 4-->
+			<div class="row" id="displayWinLossBox">
+				
+				<h2>You current wins and losses are:</h2>
+				
+			</div><!--close row 4-->
+
+		
+
+
+
+
 
 		</div>
 
