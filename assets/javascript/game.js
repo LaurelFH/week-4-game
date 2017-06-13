@@ -27,24 +27,23 @@ function randomGemValue () {
 }
 
 //attach the values to the gems (random number from 1-12) 
-function setupGemValue(){
+function setupGemValues(){
 
 	//need to fill the array with 4 random numbers from 1-12 
 
-	//
+	//call randomGemValue, need 4 numbers, push to gems array, 
+	gems.push(randomGemValue());
+	gems.push(randomGemValue());
+	gems.push(randomGemValue());
+	gems.push(randomGemValue());
+
+	//need to get rid of doubles??
+	for (var gemCount = 0; gemCount == )
 
 }
 
 
-//computer shuffles through the four gem options to find random numbers for the gems
-function shuffleGemValue(a){
-	var j, x, i;
-	for (i =a.length; i; i--){
-		x =a[i -1];
-		a[i-1] = a[j];
-		a[j] = x;
-	}
-}
+
 
 //computer assigns a random number value to the crystals between 1-12
 //each gem should be assigned a different hidden value/position in the gem value array 
@@ -54,19 +53,19 @@ function shuffleGemValue(a){
 	}
 
 	$("#garnet").click(function(){
-		assignGemValue(gemValue[0]);
+		assignGemValue(gems[0]);
 	});
 
 	$("#pearl").click(function(){
-		assignGemValue(gemValue[1]);
+		assignGemValue(gems[1]);
 	});
 
 	$("#amethyst").click(function(){
-		assignGemValue(gemValue[2]);
+		assignGemValue(gems[2]);
 	});
 
 	$("#sapphire").click(function(){
-		assignGemValue(gemValue[3]);
+		assignGemValue(gems[3]);
 	});
 
 
