@@ -8,7 +8,7 @@ var losses = 0;
 //for tracking the taregt score, player's current score and value of the gems
 var targetScore = 0;
 var playerScore = 0;
-var gemValue = [1, 2, 6, 10];//these are preset- values? or 1-12? 
+var gems = [];//these are preset- values? or 1-12? 
 
 
 /////////////Functions
@@ -18,9 +18,23 @@ var gemValue = [1, 2, 6, 10];//these are preset- values? or 1-12?
 function pickNumber () {
 	targetScore = Math.floor(Math.random() * (120-19+1) + 19);
 	//display the targetScore in the proper space
-	$("#displayTargetBox").html(targetScore);
-	//test this other part
+	$("#displayTargetBox").append(targetScore);
 }
+
+//computer assigns random value to the four gems, a number from 1-12 
+function randomGemValue () {
+	return	Math.floor(Math.random() * 12 + 1);
+}
+
+//attach the values to the gems (random number from 1-12) 
+function setupGemValue(){
+
+	//need to fill the array with 4 random numbers from 1-12 
+
+	//
+
+}
+
 
 //computer shuffles through the four gem options to find random numbers for the gems
 function shuffleGemValue(a){
@@ -36,7 +50,7 @@ function shuffleGemValue(a){
 //each gem should be assigned a different hidden value/position in the gem value array 
 	function assignGemValue(points){
 		playerScore += points;
-		$("#displayScoreBox").html(playerScore);
+		$("#displayScoreBox").append(playerScore);
 	}
 
 	$("#garnet").click(function(){
@@ -60,8 +74,10 @@ function shuffleGemValue(a){
 
 function updateScore(){
 	var score = "<p>wins: " + wins + "</p>" +
-	"<p>losses: " + losses + "</p>"+; 
-	$("displayScoreBox").html(score);
+	"<p>losses: " + losses + "</p>"
+	"<p>Your score is: " + playerScore + "</p>"; 
+	$("displayScoreBox").append(score);
+	alert(playerScore);
 }
 
 
@@ -77,9 +93,10 @@ function resetGame(){
 
 //starts the game by selecting a new target number 
 $(document).ready(function(){
-	if(targetScore = 0){
+	/*alert(targetScore);*/
+	if(targetScore == 0){
 			pickNumber();
-		}
+	}
 			shuffleGemValue(gemValue);
 		
 		//if the the playerScore === targetScore then activate wins by 1
