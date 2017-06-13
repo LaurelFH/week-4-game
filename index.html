@@ -9,8 +9,15 @@
 		<!--link for jquery functionality-->
 	 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!-- Latest compiled and minified CSS for Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!--css file-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional bootstrap theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!--google font file-->
+<link href="https://fonts.googleapis.com/css?family=Baloo|Modak" rel="stylesheet">
+
+		<!--local css file-->
 	<link rel = "stylesheet" type = "text/css" href="assets/css/style.css">
 
 </head>
@@ -18,23 +25,23 @@
 
 					<!--jumbo title with game name-->
 				<div class="jumbotron">
-				<h1 class="text-center"><strong>Crystal Gem Count: The Game!</strong></h1>
+				<h1 class="text-center">Crystal Gem Count: The Game!</h1>
 			</div>
 
 			<!--bootstrap container for the overall grid--> 
-			<div class="container">
+			<div class="container-fluid">
 			
 
 				
 				<!-- game info box-->
-				<div class="panel-body" id="gameInfoBox">
+				<div class="panel-body text-center" id="gameInfoBox">
 				<p>You will be given a random number at the start of the game. There are 4 gems below.  By clicking on a crystal you will add a specific amount of points to your total score.  You will win the game by matching your totial score to a random number, you lose the game if your total score goes above the random number. The value of each gem is hidden from you until you click it.  Each time the game starts, the game will change the values of each gem. </p>
 				</div>
 
 			<!--buttons for the four gems on row 1 these can be regular images in an array -->
 			<div class="row">
 				<!--<div class="col-lg-6">-->
-         	  <div class="panel-body" id="gemButtonBox">
+         	  <div class="panel-body text-center" id="gemButtonBox">
 					<div class="col-lg-3">
               	 		<div class="gemButtons" id="garnet"><img src="assets/images/Garnet.png" alt="garnet"></div>
               	 	</div>
@@ -56,19 +63,19 @@
 			</div><!--closes row 1-->
 
 			<!--empty div for displaying the random target number in row 2-->
-				<div class="row" id="displayTargetBox">
+				<div class="row text-center" id="displayTargetBox">
 				<h2> Your target score is:</h2>
 				</div><!--close row 2-->
 					
 			<!--empty div for the current total pointsscore display on row 3-->
-			<div class="row" id="displayPlayerScoreBox">
+			<div class="row text-center" id="displayPlayerScoreBox">
 				
 				<h2>Your current total is:</h2>
 				
 			</div><!--close row 3-->
 
 			<!--empty div for the wins and losses display on row 4-->
-			<div class="row" id="displayWinLossBox">
+			<div class="row text-center" id="displayWinLossBox">
 				
 				<h2>You current wins and losses are:</h2>
 				

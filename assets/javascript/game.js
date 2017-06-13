@@ -48,7 +48,7 @@ function setupGemValues(){
 		}
 	}
 
-	alert(gems.toString());
+//	alert(gems.toString());
 
 }
 
@@ -91,7 +91,6 @@ function checkWinLoss(){
 	} 
 	//if the scores are not equal and 
 	else if (playerScore > targetScore){
-
 		losses++;
 		//tracking info for score	
 		updateScore();
@@ -108,16 +107,16 @@ function updateScore(){
 	//"<p>Your current total is: " + playerScore + "</p>"; 
 	$("#displayPlayerScoreBox").append(playerScore);
 	$("#displayWinLossBox").append(score);
-	alert(playerScore);
+//	alert(playerScore);
 }
 
 
-//resets the game for the player
+//resets the game for the player-- need to use .empty here?
 function resetGame(){
 	targetScore = 0;
 	playerScore = 0;
+	gems = [];
 }
-
 
 
 ////////////Events-- updated for new game flow 
@@ -128,7 +127,10 @@ $(document).ready(function(){
 	if(targetScore == 0){
 		pickNumber();
 	}
+	//STILL HAVE A FLOW ISSUE RIGHT NOW-- GAME WON'T RESET PROPERLY YET 
 	setupGemValues();
+	checkWinLoss();
+	updateScore();
 
 }); 
 

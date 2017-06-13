@@ -7,13 +7,29 @@
 
 .panel-body{
 
+	text-align: center;
+
 
 }
 
 .jumbotron{
 	
-    background-image: url("../images/jumbobg.png") no-repeat center center;
-    background-position: 0% 25%;
+    background: url(https://ak2.picdn.net/shutterstock/videos/7009840/thumb/1.jpg) no-repeat center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    color: #FFF;
 
+}
+
+.body {
+
+	color: yellow;
+
+}
+
+h1{
+
+	/*font-family: 'Modak', cursive;*/
+	font-family: 'Baloo', cursive;
+	font-weight: 200;
 }
