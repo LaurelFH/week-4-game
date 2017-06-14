@@ -58,8 +58,9 @@ function setupGemValues(){
 
 	function assignGemValue(points){
 		playerScore += points;
-		$("#displayPlayerScoreBox").html(playerScore);
+		$("#displayPlayerScoreBox").html("<p>Your current point amount is: "+ playerScore + "!</p>");
 		checkWinLoss();
+
 	}
 
 	$("#garnet").click(function(){
@@ -85,6 +86,7 @@ function checkWinLoss(){
 	//if the the playerScore === targetScore then activate wins by 1
 	if(playerScore == targetScore){
 		wins++;
+		alert("You won!");
 		//tracking info for score	
 		updateScore();
 		resetGame();
@@ -93,6 +95,7 @@ function checkWinLoss(){
 	//if the scores are not equal and 
 	else if (playerScore > targetScore){
 		losses++;
+		alert("You lost!");
 		//tracking info for score	
 		updateScore();
 		resetGame();
@@ -117,13 +120,11 @@ function resetGame(){
 	targetScore = 0;
 	playerScore = 0;
 	gems = [];
+	setupNewGame();
 }
 
 
-////////////Events-- updated for new game flow 
-
-//starts the game by selecting a new target number 
-$(document).ready(function(){
+function setupNewGame(){
 	/*alert(targetScore);*/
 	if(targetScore == 0){
 		pickNumber();
@@ -132,6 +133,14 @@ $(document).ready(function(){
 	setupGemValues();
 	checkWinLoss();
 	updateScore();
+}
+
+
+////////////Events-- updated for new game flow 
+
+//starts the game by selecting a new target number 
+$(document).ready(function(){
+	setupNewGame();
 
 }); 
 
