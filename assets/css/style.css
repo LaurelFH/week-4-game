@@ -5,12 +5,21 @@
 	/*border: red 2px solid;*/
 }
 
-.panel-body{
+.panel-body p{
 
 	text-align: center;
-
+	font-size: larger;
+	margin-top: 5px white solid;
 
 }
+
+.row p{
+
+	text-align: center;
+	font-size: larger;
+
+}
+
 
 .jumbotron{
 	
@@ -27,5 +36,12 @@ h1{
 	/*font-family: 'Modak', cursive;*/
 	font-family: 'Baloo', cursive;
 	font-weight: 200;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.container-fluid{
+	background-color: #D4BBEE;/*light purple*/
+	color: #5B2595;
+	font-weight: 700;
+
+}
